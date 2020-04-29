@@ -9,7 +9,7 @@ public static class Noise
         // rtype
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
-        //Random seed for maps
+        // Random seed for maps
         System.Random prng = new System.Random(seed);
         Vector2[] octaveOffsets = new Vector2[octaves];
         for (int i = 0; i < octaves; i++)
@@ -19,21 +19,21 @@ public static class Noise
             octaveOffsets[i] = new Vector2(offsetX, offsetY);
         }
 
-        //Catch 1/0 for scale
+        // Catch 1/0 for scale
             if (scale <= 0)
         {
             scale = 0.0001f;
         }
 
-        //Set min and max Values for bounds of normalization transform
+        // Set min and max Values for bounds of normalization transform
         float maxNoiseHeight = float.MinValue;
         float minNoiseHeight = float.MaxValue;
 
-        //Make scale zoom into center of map - Ep2 19:31
+        // Make scale zoom into center of map - Ep2 19:31
         float halfWidth = mapWidth / 2f;
         float halfHeight = mapHeight / 2f;
 
-        //Calculate NoiseMap[x,y] and Find min/max Values
+        // Calculate NoiseMap[x,y] and Find min/max Values
         for(int y =0; y < mapHeight; y++)
         {
             for (int x = 0; x < mapWidth; x++)
@@ -48,7 +48,7 @@ public static class Noise
                     float sampleX = (x-halfWidth) / scale * frequency + octaveOffsets[i].x;
                     float sampleY = (y-halfHeight) / scale * frequency + octaveOffsets[i].y;
 
-                    float perlinValue = Mathf.PerlinNoise(sampleX, sampleY) * 2 -1;
+                    float perlinValue = Mathf.PerlinNoise(sampleX, sampleY) * 2 - 1;
                     noiseHeight += perlinValue * amplitude;
 
                     amplitude *= persistence;

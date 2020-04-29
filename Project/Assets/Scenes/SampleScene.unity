@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 1309401938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 104, y: 1, z: 69}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -243,15 +243,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5b893f07f6b62439bfcdbeac564ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapWidth: 104
-  mapHeight: 69
-  noiseScale: 5.13
-  octaves: 4
-  persistence: 0.607
-  lacunarity: 2.3
-  seed: 7
-  offset: {x: 2.76, y: 1.21}
+  drawMode: 1
+  mapWidth: 100
+  mapHeight: 100
+  noiseScale: 20.85
+  octaves: 5
+  persistence: 0.082
+  lacunarity: 4.07
+  seed: 8
+  offset: {x: 0, y: 0}
   autoUpdate: 1
+  regions:
+  - name: Water
+    height: 0.4
+    color: {r: 0.21092917, g: 0.28880373, b: 0.5660378, a: 0}
+  - name: Sand
+    height: 0.45
+    color: {r: 0.754717, g: 0.74043447, b: 0.4236383, a: 0}
+  - name: Grass
+    height: 0.6
+    color: {r: 0.3050683, g: 0.6132076, b: 0.28635636, a: 0}
+  - name: Forest
+    height: 0.75
+    color: {r: 0.25907853, g: 0.41509432, b: 0.23300105, a: 0}
+  - name: Mountain
+    height: 0.92
+    color: {r: 0.3490566, g: 0.23933427, b: 0.15312387, a: 0}
+  - name: Ice
+    height: 1
+    color: {r: 0.990566, g: 0.93547994, b: 0.8924439, a: 0}
 --- !u!4 &1995347410
 Transform:
   m_ObjectHideFlags: 0
